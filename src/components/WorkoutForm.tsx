@@ -1,14 +1,47 @@
 import { useId, useState } from "react";
 import type { Workout } from "../types/workout";
+import type { WorkoutFormProps } from "../types/workoutFormProps";
 
-const WorkoutForm = () => {
-  const [workoutData, setWorkoutData] = useState<Workout[]>([]);
+const WorkoutForm: React.FC<WorkoutFormProps> = ({
+  workoutData,
+  setWorkoutData,
+}) => {
+  const [errors, setErrors] = useState<{ [key in keyof Workout]?: string }>({});
+
+  const [formData, setFormData] = useState({
+    exercise: "",
+    weight: "",
+    reps: "",
+  });
   const userId = useId();
   type InputForm = React.FormEvent<HTMLFormElement>;
   //   type InputEvent = React.ChangeEvent<HTMLInputElement>;
   //   type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
 
-  console.log(">>>> workoutData:", workoutData);
+  // const formJson: { [k: string]: FormDataEntryValue }
+  // Record<string, FormDataEntryValue>
+  const validationForm = (formJson: Record<string, FormDataEntryValue>) => {
+    const newErrors: { [key in keyof Workout]?: string } = {};
+
+    if (
+      formJson.exercise == "" ||
+      (formJson.exercise as string).split("").length <= 0 ||
+      !isNaN(Number(formJson.exercise))
+    ) {
+      newErrors.exercise = "Exercise is required!";
+    }
+    if (formJson.weight == "" || Number(formJson.weight) <= 0) {
+      newErrors.weight = "Weight has to be greater than 0";
+    }
+
+    if (formJson.reps == "" || Number(formJson.reps) <= 0) {
+      newErrors.reps = "Reps has to be greater than 0";
+    }
+
+    console.log(">>>> validationForm: newError| ", formJson, newErrors);
+
+    return newErrors;
+  };
 
   const handleSubmit = (e: InputForm): void => {
     // Prevent the browser from reloading the page
@@ -19,7 +52,13 @@ const WorkoutForm = () => {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
 
-    console.log(">>>>> handleSubmit()", form, formData, formJson);
+    const newErrors = validationForm(formJson);
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+
+      return;
+    }
 
     const newWorkout: Workout = {
       id: crypto.randomUUID(),
@@ -29,11 +68,13 @@ const WorkoutForm = () => {
       reps: Number(formJson.reps),
     };
 
-    console.log(">>> newWorkout:", newWorkout);
-
     // Adding data into array
     setWorkoutData((prev) => [...prev, newWorkout]);
-    console.log(">>>> workoutData [update]:", workoutData);
+
+    // setExercise("");
+    // setWeight("");
+    // setReps("");
+    setFormData({ exercise: "", weight: "", reps: "" });
   };
 
   return (
@@ -54,8 +95,15 @@ const WorkoutForm = () => {
               type="text"
               name="exercise"
               className="bg-white"
+              value={formData.exercise}
+              onChange={(e) =>
+                setFormData({ ...formData, exercise: e.target.value })
+              }
             />
           </div>
+          {errors.exercise && (
+            <span className="text-red-600">{errors.exercise}</span>
+          )}
           <div className="flex flex-row">
             <label htmlFor={`${userId}-weight`}>Weight :</label>
             <input
@@ -63,8 +111,15 @@ const WorkoutForm = () => {
               type="number"
               name="weight"
               className="bg-white"
+              value={formData.weight}
+              onChange={(e) =>
+                setFormData({ ...formData, weight: e.target.value })
+              }
             />
           </div>
+          {errors.weight && (
+            <span className="text-red-600">{errors.weight}</span>
+          )}
           <div className="flex flex-row">
             <label htmlFor={`${userId}-reps`}>Reps :</label>
             <input
@@ -72,8 +127,14 @@ const WorkoutForm = () => {
               type="number"
               name="reps"
               className="bg-white"
+              value={formData.reps}
+              onChange={(e) =>
+                setFormData({ ...formData, reps: e.target.value })
+              }
             />
           </div>
+          {errors.reps && <span className="text-red-600">{errors.reps}</span>}
+          <div className="error"></div>
           <button type="submit" className="w-80">
             Submit
           </button>

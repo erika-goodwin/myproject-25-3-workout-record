@@ -1,14 +1,21 @@
 import "./App.css";
+// import { useState } from "react";
+import type { Workout } from "./types/workout";
 import WorkoutForm from "./components/WorkoutForm";
 import WorkoutList from "./components/WorkoutList";
+import useLocalStorage from "./hooks/useLocalStrage";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [workoutData, setWorkoutData] = useLocalStorage<Workout[]>(
+    "workout",
+    []
+  );
+  // const [workoutData, setWorkoutData] = useState<Workout[]>([]);
 
   return (
     <div className="App w-full">
-      <WorkoutForm />
-      <WorkoutList />
+      <WorkoutForm workoutData={workoutData} setWorkoutData={setWorkoutData} />
+      <WorkoutList workoutData={workoutData} setWorkoutData={setWorkoutData} />
     </div>
   );
 }
