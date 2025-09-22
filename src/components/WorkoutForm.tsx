@@ -12,8 +12,6 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
   });
   const userId = useId();
   type InputForm = React.FormEvent<HTMLFormElement>;
-  //   type InputEvent = React.ChangeEvent<HTMLInputElement>;
-  //   type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
 
   // const formJson: { [k: string]: FormDataEntryValue }
   // Record<string, FormDataEntryValue>
@@ -34,8 +32,6 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
     if (formJson.reps == "" || Number(formJson.reps) <= 0) {
       newErrors.reps = "Reps has to be greater than 0";
     }
-
-    console.log(">>>> validationForm: newError| ", formJson, newErrors);
 
     return newErrors;
   };
@@ -68,10 +64,7 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
 
     // Adding data into array
     setWorkoutData((prev) => [...prev, newWorkout]);
-
-    // setExercise("");
-    // setWeight("");
-    // setReps("");
+    // Clean ups
     setFormData({ exercise: "", weight: "", reps: "" });
   };
 

@@ -26,21 +26,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} */
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 h1 {
@@ -89,13 +84,13 @@ button:focus-visible {
 
 /* Works in Chrome, Safari, Edge */
 ::-webkit-scrollbar {
-  position: absolute;
-  width: 8px;
+  width: 4px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7ede2; /* pastel pink */
+  background: none; /* pastel pink */
+  /* background: #f7ede2; pastel pink */
   border-radius: 9999px;
 }
 
@@ -109,7 +104,7 @@ button:focus-visible {
 }
 
 /* Works in Firefox */
-* {
+/* * {
   scrollbar-width: thin;
-  scrollbar-color: #d3d3d366 #f7ede2;
-}
+  scrollbar-color: #d3d3d366 #ffffff00;
+} */
