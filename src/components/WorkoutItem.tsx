@@ -6,8 +6,6 @@ interface WorkoutItemProps {
 }
 
 const WorkoutItem: React.FC<WorkoutItemProps> = ({ data, handleDelete }) => {
-  console.log(">>>> Item:", data);
-
   const isoString = data.date;
   const date = new Date(isoString);
   const formatted = date.toLocaleString("en-US", {
@@ -27,7 +25,7 @@ const WorkoutItem: React.FC<WorkoutItemProps> = ({ data, handleDelete }) => {
       </p>
       <div
         className="bg-caution absolute w-8 h-8 rounded-md top-[50%] translate-y-[-50%] right-4 p-2 flex flex-col justify-center content-center text-center cursor-pointer"
-        onClick={handleDelete}
+        onClick={() => handleDelete(data.id)}
       >
         <p data-id={data.id} className="text-background-shadow">
           x

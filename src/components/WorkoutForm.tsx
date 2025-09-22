@@ -2,10 +2,7 @@ import { useId, useState } from "react";
 import type { Workout } from "../types/workout";
 import type { WorkoutFormProps } from "../types/workoutFormProps";
 
-const WorkoutForm: React.FC<WorkoutFormProps> = ({
-  workoutData,
-  setWorkoutData,
-}) => {
+const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
   const [errors, setErrors] = useState<{ [key in keyof Workout]?: string }>({});
 
   const [formData, setFormData] = useState({
@@ -110,12 +107,11 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({
               />
             </div>
           </div>
-            <div className="error flex flex-col">
-              {errors.exercise && (
-                <span className="text-red-600">{errors.exercise}</span>
-              )}
-             
-            </div>
+          <div className="error flex flex-col">
+            {errors.exercise && (
+              <span className="text-red-600">{errors.exercise}</span>
+            )}
+          </div>
           <div className="flex flex-col justify-around mt-3">
             <div className="flex flex-row justify-around">
               <div className="w-38 relative">

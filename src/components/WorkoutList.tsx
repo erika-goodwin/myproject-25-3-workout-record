@@ -1,7 +1,7 @@
-import type { WorkoutFormProps } from "../types/workoutFormProps";
+import type { WorkoutListProp } from "../types/workoutListProp";
 import WorkoutItem from "./WorkoutItem";
 
-const WorkoutList: React.FC<WorkoutFormProps> = ({
+const WorkoutList: React.FC<WorkoutListProp> = ({
   workoutData,
   setWorkoutData,
 }) => {
