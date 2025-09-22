@@ -13,9 +13,17 @@ function App() {
   // const [workoutData, setWorkoutData] = useState<Workout[]>([]);
 
   return (
-    <div className="App w-full">
-      <WorkoutForm workoutData={workoutData} setWorkoutData={setWorkoutData} />
-      <WorkoutList workoutData={workoutData} setWorkoutData={setWorkoutData} />
+    <div className="App w-full h-dvh bg-background pt-7">
+      <div className="modal w-[350px] max-h-screen m-auto rounded-md shadow-lg">
+        <WorkoutForm
+          workoutData={workoutData}
+          setWorkoutData={setWorkoutData}
+        />
+        <WorkoutList
+          workoutData={workoutData}
+          setWorkoutData={setWorkoutData}
+        />
+      </div>
     </div>
   );
 }

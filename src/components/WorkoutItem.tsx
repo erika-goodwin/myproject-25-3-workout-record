@@ -19,18 +19,19 @@ const WorkoutItem: React.FC<WorkoutItemProps> = ({ data, handleDelete }) => {
   });
 
   return (
-    <div className="bg-blue-100 w-150 m-auto mb-10 p-3  bg-white flex flex-col justify-center content-center text-center relative">
-      <h2>{data.exercise}</h2>
+    <div className="bg-background-shadow w-full not-first:mt-4 p-3 rounded-md flex flex-col justify-center content-center relative">
+      <p className="text-sm">{formatted}</p>
+      <h2 className="mt-1.5">{data.exercise}</h2>
       <p>
-        {data.weight} kg X {data.reps} reps
+        Record: {data.weight} kg X {data.reps} reps
       </p>
-      <p>{formatted}</p>
-
       <div
-        className="bg-cyan-200 absolute w-8 h-8 top-0 right-0 p-2 flex flex-col justify-center content-center text-center cursor-pointer"
+        className="bg-caution absolute w-8 h-8 rounded-md top-[50%] translate-y-[-50%] right-4 p-2 flex flex-col justify-center content-center text-center cursor-pointer"
         onClick={handleDelete}
       >
-        <p data-id={data.id}>x</p>
+        <p data-id={data.id} className="text-background-shadow">
+          x
+        </p>
       </div>
     </div>
   );
