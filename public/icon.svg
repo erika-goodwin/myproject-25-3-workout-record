@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background Circle with Soft Shadow -->
+  <circle cx="32" cy="32" r="32" fill="#f7ede2" filter="url(#bg-shadow)"></circle>
+
+  <!-- Left Weight Shadow -->
+  <rect x="6" y="24" width="12" height="20" rx="2" ry="2" fill="#235049" opacity="0.2"></rect>
+  
+  <!-- Right Weight Shadow -->
+  <rect x="46" y="24" width="12" height="20" rx="2" ry="2" fill="#235049" opacity="0.2"></rect>
+  
+  <!-- Left Weight -->
+  <rect x="6" y="22" width="12" height="20" rx="2" ry="2" fill="#f28482"></rect>
+  
+  <!-- Right Weight -->
+  <rect x="46" y="22" width="12" height="20" rx="2" ry="2" fill="#f28482"></rect>
+  
+  <!-- Bar Shadow -->
+  <rect x="18" y="30" width="28" height="8" rx="2" ry="2" fill="#235049" opacity="0.2"></rect>
+  
+  <!-- Bar -->
+  <rect x="18" y="28" width="28" height="8" rx="2" ry="2" fill="#84a59d"></rect>
+  
+  <!-- Accent Highlight on Bar -->
+  <rect x="18" y="28" width="28" height="4" fill="#f5cac3"></rect>
+
+  <!-- Filter for background shadow -->
+  <defs>
+    <filter id="bg-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#fffcf7"></feDropShadow>
+    </filter>
+  </defs>
+</svg>
