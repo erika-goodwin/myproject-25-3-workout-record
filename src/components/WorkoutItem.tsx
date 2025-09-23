@@ -1,9 +1,4 @@
-import type { Workout } from "../types/workout";
-
-interface WorkoutItemProps {
-  data: Workout;
-  handleDelete: (id: string) => void;
-}
+import type { WorkoutItemProps } from "../types/workoutItemProps";
 
 const WorkoutItem: React.FC<WorkoutItemProps> = ({ data, handleDelete }) => {
   const isoString = data.date;
@@ -19,7 +14,7 @@ const WorkoutItem: React.FC<WorkoutItemProps> = ({ data, handleDelete }) => {
   return (
     <div className="bg-background-shadow w-full not-first:mt-4 p-3 rounded-md flex flex-col justify-center content-center relative">
       <p className="text-sm">{formatted}</p>
-      <h2 className="mt-1.5">{data.exercise}</h2>
+      <h2 className="w-full mt-1.5">{data.exercise}</h2>
       <p>
         Record: {data.weight} kg X {data.reps} reps
       </p>

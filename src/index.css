@@ -18,7 +18,7 @@
 
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
-  background-color: #242424;
+  background-color: #f7ede2;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,6 +49,13 @@ h2 {
   font-size: 1.2em;
   line-height: 1.1;
   font-weight: 600;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 button {
@@ -79,7 +86,7 @@ button:focus-visible {
   /* a:hover {
     color: #747bff;
   } */
-/* } */ 
+/* } */
 
 /*  Scrolling bar look */
 

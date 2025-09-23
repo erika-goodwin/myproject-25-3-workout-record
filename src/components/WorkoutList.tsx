@@ -12,7 +12,9 @@ const WorkoutList: React.FC<WorkoutListProp> = ({
   };
 
   return (
-    <div className="w-full max-h-[355px] sm:max-h-[470px] p-3 rounded-b-md overflow-y-scroll flex flex-col justify-start content-center">
+    // <!-- List (scrollable) -->
+    <div className="w-full  p-3 rounded-b-md overflow-y-scroll overflow-x-hidden flex flex-col justify-start content-center">
+      {/* <div className="w-full max-h-[355px] sm:max-h-[470px] p-3 rounded-b-md overflow-y-scroll overflow-x-hidden flex flex-col justify-start content-center"> */}
       {[...workoutData]
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .map((data) => (

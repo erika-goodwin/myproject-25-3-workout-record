@@ -33,6 +33,13 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
       newErrors.reps = "Reps has to be greater than 0";
     }
 
+    if (
+      (formJson.reps as string).length >= 4 ||
+      (formJson.reps as string).length >= 4
+    ) {
+      newErrors.reps = "Weights/Reps has to be less than 999";
+    }
+
     return newErrors;
   };
 
@@ -70,9 +77,12 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
 
   return (
     <div className=" w-full flex flex-col justify-center content-center">
+      {/* <!-- Header --> */}
       <div className="bg-primary p-4 rounded-t-md flex justify-center content-center">
         <h1 className="text-primary-shadow">Workout Tracker</h1>
       </div>
+
+      {/* <!-- Form --> */}
       <div className="w-full flex m-auto p-3 pt-5  justify-center content-center">
         <form
           className="w-full flex flex-col justify-center content-center"
@@ -97,6 +107,7 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, exercise: e.target.value })
                 }
+                maxLength={20}
               />
             </div>
           </div>
@@ -121,8 +132,11 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
                   onChange={(e) =>
                     setFormData({ ...formData, weight: e.target.value })
                   }
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  max={999}
                 />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
+                <span className="absolute right-7 top-1/2 -translate-y-1/2 text-gray-500">
                   kg
                 </span>
               </div>
@@ -140,6 +154,9 @@ const WorkoutForm: React.FC<WorkoutFormProps> = ({ setWorkoutData }) => {
                   onChange={(e) =>
                     setFormData({ ...formData, reps: e.target.value })
                   }
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  max={999}
                 />
               </div>
             </div>
