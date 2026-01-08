@@ -1,10 +1,8 @@
 ## Workout Recorder
 _Track your daily lifts and your PRs!_
 
-
-<img width="200" height="433.488" alt="IMG_7216" src="https://github.com/user-attachments/assets/de763e5e-35db-429e-a435-de324e4fa20c" />
-<img width="200" height="433.488" alt="IMG_7213" src="https://github.com/user-attachments/assets/e7e8bd50-c300-426c-80ce-d20d40f82a14" /> 
-
+<img width="800" height="600" alt="wod-shot-1" src="https://github.com/user-attachments/assets/0cfbfc2d-8a61-43c8-98b7-5c9dc07b962f" />
+  
 
 
 
@@ -36,5 +34,4 @@ Even though the app itself is simple, the most challenging part was designing th
 
 For future improvements, I would like to add features such as filtering and sorting workouts, as well as additional fields like notes. In my next project, I plan to use Supabase as a database so I can practice data fetching, reading, and writing with a real backend instead of relying only on LocalStorage. From a design perspective, this app uses the same layout for both mobile and desktop, intentionally keeping a compact, mobile-first look. In my next app, I want to better enjoy designing separate experiences for mobile and desktop, with layouts that take advantage of larger screens. By preparing mockups, file structure, and data design more carefully in advance, I aim to build projects that are more scalable, polished, and maintainable.
 
-<img width="200" height="433.488" alt="IMG_7212" src="https://github.com/user-attachments/assets/1a651311-83c3-40e2-a2e4-993ae2c60c61" />
-<img width="200" height="433.488" alt="IMG_7214" src="https://github.com/user-attachments/assets/680b9471-24ef-4388-b9f2-2fe35fb7b69c" />
+<img width="800" height="600" alt="wod-shot-2" src="https://github.com/user-attachments/assets/9ab1e1cb-3f96-4212-9f40-43654da61c84" />
