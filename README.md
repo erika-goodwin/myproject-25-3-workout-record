@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+## Workout Recorder
+_Track your daily lifts and your PRs!_
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<img width="200" height="433.488" alt="IMG_7216" src="https://github.com/user-attachments/assets/de763e5e-35db-429e-a435-de324e4fa20c" />
+<img width="200" height="433.488" alt="IMG_7213" src="https://github.com/user-attachments/assets/e7e8bd50-c300-426c-80ce-d20d40f82a14" /> 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This is a single-page React application built with TypeScript.
+The goal of this project was to focus on core React fundamentals without relying on a backend, authentication, or complex libraries.
+All workout data is persisted using LocalStorage, allowing the app to retain records even after a page refresh.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Spec:** React, TypeScript, Tailwind CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Check App:** [Check here](https://workout-record-erika.vercel.app/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Why made me create this app?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+I work out almost every day, mainly doing CrossFit and HYROX-style training, and I also prepared for HYROX by myself. One issue I constantly had was not remembering my max lifts, so I often trained based only on how I felt that day. While that can work, I realized that to truly improve and get stronger, it’s important to know exact numbers—what I can lift, what I lifted before, and whether I’m actually progressing. This app was created as a simple way to record workouts and clearly understand my own strength and performance over time.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Core Features
+
+- Add a workout with date, exercise name, weight, and reps
+- View all workouts in a table (newest first)
+- Delete a workout with a single click
+- Persist data using LocalStorage
+- Fully typed using TypeScript
+
+### What was challenging?
+
+Even though the app itself is simple, the most challenging part was designing the state flow correctly. I had to decide where the main workout data should live, how to pass it through components using props, and how to update state safely when adding or deleting workouts. LocalStorage, on the other hand, was something I was already comfortable with because I had used it many times in CRO experiments, where I didn’t have access to a database. It felt natural to reuse a familiar approach while applying it in a more structured React project, which allowed me to focus on practicing proper state management and component design. This project reminded me that even small applications require thoughtful structure and clear data flow.
+
+### Goals for Improvement
+
+For future improvements, I would like to add features such as filtering and sorting workouts, as well as additional fields like notes. In my next project, I plan to use Supabase as a database so I can practice data fetching, reading, and writing with a real backend instead of relying only on LocalStorage. From a design perspective, this app uses the same layout for both mobile and desktop, intentionally keeping a compact, mobile-first look. In my next app, I want to better enjoy designing separate experiences for mobile and desktop, with layouts that take advantage of larger screens. By preparing mockups, file structure, and data design more carefully in advance, I aim to build projects that are more scalable, polished, and maintainable.
+
+<img width="200" height="433.488" alt="IMG_7212" src="https://github.com/user-attachments/assets/1a651311-83c3-40e2-a2e4-993ae2c60c61" />
+<img width="200" height="433.488" alt="IMG_7214" src="https://github.com/user-attachments/assets/680b9471-24ef-4388-b9f2-2fe35fb7b69c" />
