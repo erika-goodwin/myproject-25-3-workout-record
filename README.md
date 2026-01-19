@@ -1,9 +1,7 @@
 ## Workout Recorder
 _Track your daily lifts and your PRs!_
-
-<img width="800" height="600" alt="wod-shot-1" src="https://github.com/user-attachments/assets/0cfbfc2d-8a61-43c8-98b7-5c9dc07b962f" />
   
-
+<img width="800" height="600" alt="wod-shot-1" src="https://github.com/user-attachments/assets/61b25d01-de93-4821-abb3-3d992e4df284" />
 
 
 This is a single-page React application built with TypeScript.
@@ -34,4 +32,4 @@ Even though the app itself is simple, the most challenging part was designing th
 
 For future improvements, I would like to add features such as filtering and sorting workouts, as well as additional fields like notes. In my next project, I plan to use Supabase as a database so I can practice data fetching, reading, and writing with a real backend instead of relying only on LocalStorage. From a design perspective, this app uses the same layout for both mobile and desktop, intentionally keeping a compact, mobile-first look. In my next app, I want to better enjoy designing separate experiences for mobile and desktop, with layouts that take advantage of larger screens. By preparing mockups, file structure, and data design more carefully in advance, I aim to build projects that are more scalable, polished, and maintainable.
 
-<img width="800" height="600" alt="wod-shot-2" src="https://github.com/user-attachments/assets/9ab1e1cb-3f96-4212-9f40-43654da61c84" />
+<img width="800" height="600" alt="wod-shot-2" src="https://github.com/user-attachments/assets/1bf6e6c7-83fe-43cc-b974-8f60e1822d06" />
