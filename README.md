@@ -8,7 +8,7 @@ This is a single-page React application built with TypeScript.
 The goal of this project was to focus on core React fundamentals without relying on a backend, authentication, or complex libraries.
 All workout data is persisted using LocalStorage, allowing the app to retain records even after a page refresh.
 
-- **Spec:** React, TypeScript, Tailwind CSS
+- **Spec:** React, Vite, TypeScript, Tailwind CSS
 
 - **Check App:** [Check here](https://workout-record-erika.vercel.app/)
 
